@@ -23,7 +23,7 @@ jobs:
       - name: Install test dependencies
         run: sudo apt-get -y -q --no-install-recommends install ffmpeg mediainfo tesseract-ocr tesseract-ocr-deu
       - name: Build with Maven
-        run: mvn -B clean test
+        run: mvn clean -DskipTests install 
       - name: Optionally configure Spotbugs
         run: mvn spotbugs:spotbugs
       - name: Run Spotbugs tests
