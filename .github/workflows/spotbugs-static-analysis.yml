@@ -22,6 +22,10 @@ jobs:
           cache: maven
       - name: Install test dependencies
         run: sudo apt-get -y -q --no-install-recommends install ffmpeg mediainfo tesseract-ocr tesseract-ocr-deu
+      - name: Build with Maven
+        run: mvn -B clean test
+      - name: Optionally configure Spotbugs
+        run: mvn spotbugs:spotbugs
       - name: Run Spotbugs tests
         run: mvn spotbugs:check
 
