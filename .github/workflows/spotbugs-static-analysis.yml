@@ -3,6 +3,7 @@ name: Spotbugs Static Analysis
 on:
   push:
     branches: 
+      - 'spotbugs-ci'
       - 'main'
     tags: [v*]
   workflow_dispatch:
